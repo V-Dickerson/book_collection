@@ -1,0 +1,26 @@
+
+---
+ar_internal_metadata:
+  columns:
+  - key
+  - value
+  - created_at
+  - updated_at
+  records: 
+  - - environment
+    - development
+    - 2025-08-29 16:43:55.016250000 Z
+    - 2025-08-29 16:43:55.016250000 Z
+
+---
+books:
+  columns:
+  - id
+  - title
+  - created_at
+  - updated_at
+  records: 
+  - - 1
+    - Designing Data-Intensive Applications
+    - 2025-08-29 16:47:44.237550000 Z
+    - 2025-08-29 16:47:44.237550000 Z
