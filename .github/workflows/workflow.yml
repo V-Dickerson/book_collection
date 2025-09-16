@@ -1,5 +1,5 @@
 env:
-  RUBY_VERSION: 3.1.2
+  RUBY_VERSION: 3.4.5
   POSTGRES_USER: postgres
   POSTGRES_PASSWORD: password
   DATABASE_USER: postgres
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:12
+        image: postgres:17
         ports:
         - 5432:5432
         env:
@@ -28,13 +28,12 @@ jobs:
         run: sudo apt-get install libpq-dev
       - name: Install dependencies
         run: |
-          gem install bundler
-          bundler install
-      - name: Create database
+        gem install bundler
+        bundler install
+        - name: Create database
         run: |
-          bundler exec rails db:create RAILS_ENV=test
-          bundler exec rails db:migrate RAILS_ENV=test
-      - uses: borales/actions-yarn@v3.0.0
+        bundler exec rails db:create RAILS_ENV=test
+        bundler exec rails db:migrate RAILS_ENV=test - uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install
       - name: Run tests
